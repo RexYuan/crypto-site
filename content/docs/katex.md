@@ -1,5 +1,4 @@
 ---
-title: one
 weight: 1
 ---
 
