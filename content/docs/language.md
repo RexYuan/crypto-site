@@ -1,5 +1,5 @@
 ---
-title: "CryptoLine Language"
+title: "Language"
 weight: 2
 # bookFlatSection: false
 # bookToc: true
