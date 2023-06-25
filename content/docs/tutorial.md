@@ -1127,7 +1127,7 @@ $ $CL_HOME/cv.exe -v -isafety ecp_nistz256_mul_mont.cl
 **Exercise:** Construct a model for `ecp_nistz256_sqr_mont` in
 `ecp_nistz256-x86_64.pl` and verify it.
 
-### Compositional Reasoning with `cut`
+### Compositional Reasoning with cut
 
 The `ecp_nistz256_mul_mont` subroutine computes in two phases. The first phase
 computes the Montgomery product and stores it in five registers
