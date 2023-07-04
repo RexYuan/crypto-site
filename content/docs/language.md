@@ -43,17 +43,17 @@ with width $w$ in the unsigned and two's complement signed
 representations respectively.
 The type $\uint 1$ is also written as $\bit$.
 \\[
-  \\begin{array}{rcl}
+  \begin{array}{rcl}
     \typ & ::= & \uint 1 \mid \sint 2 \mid \uint 2 \mid \sint 3 \mid
                 \cdots \mid \uint w \mid \sint (w+1)
-  \\end{array}
+  \end{array}
 \\]
 
 A *constant* is an integer, a binary number, a hexadecimal
 number, a named constant, or arithmetic expressions over constants.
 
 \\[
-  \\begin{array}{rcl}
+  \begin{array}{rcl}
     \const &  ::= & \simpleconst \\\\
            & \mid & \pmb(\ \complexconst\ \pmb) \\\\
     \simpleconst &  ::= & \mZ \\\\
@@ -68,7 +68,7 @@ number, a named constant, or arithmetic expressions over constants.
            & \mid & \complexconst\ \pmb\powop\ \complexconst \\\\
     \tconst & ::= & \const @ \typ \\\\
            & \mid &  \typ\ \const
-  \\end{array}
+  \end{array}
 \\]
 
 The value of a named integer $c$ is read by $\\$c$.
@@ -84,11 +84,11 @@ specified.
 An $\lval$ is either a variable or a typed variable.
 
 \\[
-  \\begin{array}{rcl}
+  \begin{array}{rcl}
     \var & ::= & \id \\\\
     \tvar & ::= & \var @ \typ \mid \typ\ \var \\\\
     \lval & ::= & \var \mid \tvar
-  \\end{array}
+  \end{array}
 \\]
 
 The notation $t_{\circ}^*$ and $t_{\circ}^+$ respectlvey represents a
@@ -104,7 +104,7 @@ an atom because $\cryptoline$ can infer the type automatically.
 
 An *algebraic expression* is evaluated over $\mZ$.
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
 \eexp &  ::= & \simpleconst %\\\\
       & \mid & \var \\\\
       & \mid & \pmb{-}\ \eexp %\\\\
@@ -114,7 +114,7 @@ An *algebraic expression* is evaluated over $\mZ$.
       & \mid & \eexp\ \pmb{**}\ \eexp %\\\\
       & \mid & \pmb\ilimbs\ \const\ \pmb{[}\ \eexp_{\pmb,}^+\ \pmb{]} \\\\
       & \mid & \pmb{(}\ \eexp\ \pmb{)}
-\\end{array}
+\end{array}
 \\]
 $\ilimbs\ n\ [e_1, \ldots, e_m ]$ represents $e_1 + e_2 2^n + e_3
 2^{2n} + \cdots + e_m 2^{(m-1)n}$.
@@ -130,7 +130,7 @@ $\iuext$ and $\isext$ are respectively unsigned and signed extension
 operations.
 
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
   \rexp &  ::= & \pmb{(}\ \rexp\ \pmb{)}
   & \mid & \pmb\iconst\ \const\ \const \\\\
         & \mid & \pmb{-}\ \rexp
@@ -153,15 +153,15 @@ operations.
   & \mid & \pmb\ilimbs\ \const\ \pmb[\ \rexp_{\pmb,}^+\ \pmb] \\\\
         & \mid & \pmb\iuext\ \rexp\ \const
   & \mid & \pmb\isext\ \rexp\ \const \\\\
-\\end{array}
+\end{array}
 \\]
 
 A *predicate* is represented by an algebraic predicate and a range predicate.
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
 \pred &  ::= & \pmb\true
       & \mid & \epred\ \pmb\band\ \rpred
-\\end{array}
+\end{array}
 \\]
 An *algebraic predicate* is evaluated over the integer domain.
 $e_1 = e_2$ ($\ieq\ e_1\ e_2$) is an equality over algebraic
@@ -174,7 +174,7 @@ The conjunction of a sequence of algebraic predicates $e_1, \ldots,
 e_n$ is written as $\landop\ [e_1, \ldots, e_n]$ ($\iand\ [e_1, \ldots,
 e_n]$).
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
   \epred &  ::= & \pmb(\ \epred\ \pmb)
   & \mid & \pmb\true \\\\
          & \mid & \eexp\ \pmb\eqop\ \eexp
@@ -185,7 +185,7 @@ e_n]$).
   & \mid & \pmb\iand\ \epred\ \epred \\\\
          & \mid & \pmb\landop\ \pmb[\ \epred_{\pmb,}^+\ \pmb]
   & \mid & \pmb\iand\ \pmb[\ \epred_{\pmb,}^+\ \pmb] \\\\
-\\end{array}
+\end{array}
 \\]
 A *range predicate* specifies the ranges of variables.
 $\cryptoline$ offers comparisons such as equality ($\eqop$), modular
@@ -196,7 +196,7 @@ signed less than ($\sltop$), signed less than or equal to ($\sleop$),
 signed greater than ($\sgtop$), and signed greater than or equal to
 ($\sgeop$).
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
   \rpred &  ::= & \pmb{(}\ \rpred\ \pmb{)}
   & \mid & \pmb\true \\\\
          & \mid & \rexp\ \pmb\eqop\ \rexp
@@ -233,7 +233,7 @@ signed greater than ($\sgtop$), and signed greater than or equal to
   & \mid & \pmb{\iand}\ \pmb{[}\ \rpred_{\pmb,}^+\ \pmb{]} \\\\
          & \mid & \pmb{\lorop}\ \pmb{[}\ \rpred_{\pmb,}^+\ \pmb{]}
   & \mid & \pmb{\ior}\ \pmb{[}\ \rpred_{\pmb,}^+\ \pmb{]}
-\\end{array}
+\end{array}
 \\]
 
 There are numerous *instructions* supported by $\cryptoline$.
@@ -314,7 +314,7 @@ $\icall\ p\ (a_1, a_2, \ldots, a_n)$ executes a defined procedure $p$
 with arguments $a_1, a_2, \ldots, a_n$.
 
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
   \instr &  ::= & \pmb\imov\ \lval\ \atom
          & \mid & \pmb\icmov\ \lval\ \lval\ \atom\ \atom \\\\
          & \mid & \pmb\iadd\ \lval\ \atom\ \atom
@@ -361,7 +361,7 @@ with arguments $a_1, a_2, \ldots, a_n$.
          & \mid & \pmb\ighost\ \tvar_{\pmb,}^+\ \pmb{:}\ \pred \\\\
          & \mid & \pmb\icall\ \id\ \pmb{(}\ \atom_{\pmb,}^* \pmb{)}
   & \mid & \pmb\inop
-\\end{array}
+\end{array}
 \\]
 
 Instructions $\iadd$, $\iadds$, $\iadc$, $\iadcs$, $\isub$, $\isubc$,
@@ -375,7 +375,7 @@ Sometimes a predicate has to be proved with facts that have been cut off.
 $\cryptoline$ offers the specification of hints required to prove a predicate.
 
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
   \predclause &  ::= & \true %\\\\
               & \mid & \epredclause\ \pmb{\\&\\&}\ \rpredclause \\\\
   \epredclause &  ::= & \epred %\\\\
@@ -400,7 +400,7 @@ $\cryptoline$ offers the specification of hints required to prove a predicate.
              & \mid & \pmb\algebra\ \pmb\solver\ \cas \\\\
              & \mid & \pmb\algebra\ \pmb\solver\ \pmb\smt\pmb:\path
              & \mid & \pmb\range\ \pmb\solver\ \path
-\\end{array}
+\end{array}
 \\]
 
 Note that the indices of $\iecut$ and $\ircut$ are numbered separately
@@ -461,10 +461,10 @@ A *postcondition* is a predicate clause.
 
 A *statement* is a declaration of a procedure or a named integer.
 \\[
-\\begin{array}{rclcl}
+\begin{array}{rclcl}
 \stmt &  ::= & \proc %\\\\
       & \mid & \pmb\iconst\ \id\ \pmb\eqop\ \const
-\\end{array}
+\end{array}
 \\]
 
 A *program* is a sequence of semicolon separated statements.
